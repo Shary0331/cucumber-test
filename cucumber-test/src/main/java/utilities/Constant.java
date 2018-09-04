@@ -1,12 +1,14 @@
 package utilities;
 
 import java.io.File;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 class Constant {
 
     /**Config Properties file **/
-    static Path path = java.nio.file.Paths.get(System.getProperty("user.dir"),"main", "resources", "config.properties");
-    
+    private static Path path = Paths.get(System.getProperty("user.dir"), "main", "resources", "config.properties");
+
     final static String CONFIG_PROPERTIES_DIRECTORY = path.toString();
 //    final static String CONFIG_PROPERTIES_DIRECTORY = System.getProperty("user.dir") + "src" + File.pathSeparator + "main"  + File.pathSeparator + "resources"  + File.pathSeparator + "config.properties";
 
