@@ -42,8 +42,8 @@ public class DriverFactory {
             properties.load(fi);
             String browserName = properties.getProperty("browser");
             String profile = System.getProperty("profileId");
-           logger.info("Current profile: " + profile);
-            logger.info("Browser type: " + browserName);
+//            logger.info("Current profile: " + profile);
+//             logger.info("Browser type: " + browserName);
 
 //            ReadConfigFile file = new ReadConfigFile();
 //            String browserName = file.getBrowser();
