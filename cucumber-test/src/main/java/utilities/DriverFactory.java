@@ -37,7 +37,7 @@ public class DriverFactory {
         try {
             // Read Config
             Properties properties = new Properties();
-            FileInputStream fi = new FileInputStream(System.getProperty("user.dir") + "\\src\\main\\resources\\config.properties");
+            FileInputStream fi = new FileInputStream(System.getProperty("user.dir") + File.separator + "src" + File.separator + "main"  + File.separator + "resources"  + File.separator + "config.properties");
             properties.load(fi);
             String browserName = properties.getProperty("browser");
             String profile = System.getProperty("profileId");
