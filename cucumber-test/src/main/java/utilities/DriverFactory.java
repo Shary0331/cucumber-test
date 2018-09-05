@@ -98,6 +98,7 @@ public class DriverFactory {
         } catch (Exception e) {
             System.out.println("Unable to load browser: " + e.getMessage());
         } finally {
+            assert driver != null;
             driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
             contactUsPage = PageFactory.initElements(driver, ContactUsPage.class);
             productPage = PageFactory.initElements(driver, ProductPage.class);
