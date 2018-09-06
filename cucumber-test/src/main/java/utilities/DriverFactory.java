@@ -75,7 +75,8 @@ public class DriverFactory {
                         options.addArguments("--disable-notifications");
                         options.addArguments("disable-infobars");
                         if (profile.equals("remote")) {
-                            driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
+//                             driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
+                            driver = new RemoteWebDriver(new URL("http://127.0.0.1:4444/wd/hub"), options);
                         } else {
                             driver = new ChromeDriver(options);
                         }
