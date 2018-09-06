@@ -72,12 +72,15 @@ public class DriverFactory {
                     if (null == driver) {
                         System.setProperty("webdriver.chrome.driver", Constant.CHROME_DRIVER_DIRECTORY);
                         ChromeOptions options = new ChromeOptions();
-//                         options.addArguments("start-maximized");
-//                         options.addArguments("--disable-notifications");
-//                         options.addArguments("disable-infobars");
-//                         options.addArguments("--no-sandbox");
+                        DesiredCapabilities capabilities = new DesiredCapabilities();
+                        capabilities.setCapability("start-maximized", true);
+                        capabilities.setCapability("--disable-notifications", true);
+                        capabilities.setCapability("disable-infobars", true);
+                        options.addArguments("start-maximized");
+                        options.addArguments("--disable-notifications");
+                        options.addArguments("disable-infobars");
                         if (profile.equals("remote")) {
-                            driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
+                            driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
                         } else {
                             driver = new ChromeDriver(options);
                         }
@@ -117,3 +120,5 @@ public class DriverFactory {
         return driver;
     }
 }
+
+
