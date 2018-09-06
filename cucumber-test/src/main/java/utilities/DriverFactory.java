@@ -38,12 +38,13 @@ public class DriverFactory {
         try {
             // Read Config
             Properties properties = new Properties();
-            FileInputStream fi = new FileInputStream(System.getProperty("user.dir") + File.separator + "src" + File.separator + "main"  + File.separator + "resources"  + File.separator + "config.properties");
+//            FileInputStream fi = new FileInputStream(System.getProperty("user.dir") + File.separator + "src" + File.separator + "main"  + File.separator + "resources"  + File.separator + "config.properties");
+            FileInputStream fi = new FileInputStream(Constant.CONFIG_PROPERTIES_DIRECTORY);
             properties.load(fi);
             String browserName = properties.getProperty("browser");
             String profile = System.getProperty("profileId");
-            logger.info("Current profile: " + profile);
-            logger.info("Browser type: " + browserName);
+//            logger.info("Current profile: " + profile);
+//            logger.info("Browser type: " + browserName);
 //            ReadConfigFile file = new ReadConfigFile();
 //            String browserName = file.getBrowser();
 
@@ -74,9 +75,9 @@ public class DriverFactory {
                         options.addArguments("start-maximized");
                         options.addArguments("--disable-notifications");
                         options.addArguments("disable-infobars");
+                        options.addArguments("--no-sandbox");
                         if (profile.equals("remote")) {
-//                             driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
-                            driver = new RemoteWebDriver(new URL("http://127.0.0.1:4444/wd/hub"), options);
+                            driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
                         } else {
                             driver = new ChromeDriver(options);
                         }
