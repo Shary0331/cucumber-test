@@ -75,7 +75,7 @@ public class DriverFactory {
 //                         options.addArguments("start-maximized");
 //                         options.addArguments("--disable-notifications");
 //                         options.addArguments("disable-infobars");
-                        options.addArguments("--no-sandbox");
+//                         options.addArguments("--no-sandbox");
                         if (profile.equals("remote")) {
                             driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
                         } else {
