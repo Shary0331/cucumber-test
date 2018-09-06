@@ -73,12 +73,10 @@ public class DriverFactory {
                         System.setProperty("webdriver.chrome.driver", Constant.CHROME_DRIVER_DIRECTORY);
                         ChromeOptions options = new ChromeOptions();
                         DesiredCapabilities capabilities = new DesiredCapabilities();
-                        capabilities.setCapability("start-maximized", true);
-                        capabilities.setCapability("--disable-notifications", true);
-                        capabilities.setCapability("disable-infobars", true);
                         options.addArguments("start-maximized");
                         options.addArguments("--disable-notifications");
                         options.addArguments("disable-infobars");
+                        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
                         if (profile.equals("remote")) {
                             driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
                         } else {
