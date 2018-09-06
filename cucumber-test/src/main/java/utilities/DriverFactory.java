@@ -42,9 +42,8 @@ public class DriverFactory {
             properties.load(fi);
             String browserName = properties.getProperty("browser");
             String profile = System.getProperty("profileId");
-//            logger.info("Current profile: " + profile);
-//             logger.info("Browser type: " + browserName);
-
+            logger.info("Current profile: " + profile);
+            logger.info("Browser type: " + browserName);
 //            ReadConfigFile file = new ReadConfigFile();
 //            String browserName = file.getBrowser();
 
@@ -58,9 +57,11 @@ public class DriverFactory {
                         firefoxOptions.setCapability("marionette", true);
                         if (profile.equals("remote")) {
                             driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), firefoxOptions);
+
                         } else {
                             driver = new FirefoxDriver(firefoxOptions);
                         }
+                        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
                         driver.manage().window().maximize();
                     }
                     break;
@@ -78,6 +79,8 @@ public class DriverFactory {
                         } else {
                             driver = new ChromeDriver(options);
                         }
+                        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+                        driver.manage().window().maximize();
                     }
                     break;
 
@@ -89,9 +92,12 @@ public class DriverFactory {
                         System.setProperty("webdriver.ie.driver", Constant.IE_DRIVER_DIRECTORY);
                         if (profile.equals("remote")) {
                             driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
+                            driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
                         } else {
                             driver = new InternetExplorerDriver(options);
+                            driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
                         }
+                        driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
                         driver.manage().window().maximize();
                     }
                     break;
@@ -99,7 +105,6 @@ public class DriverFactory {
         } catch (Exception e) {
             System.out.println("Unable to load browser: " + e.getMessage());
         } finally {
-            driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
             contactUsPage = PageFactory.initElements(driver, ContactUsPage.class);
             productPage = PageFactory.initElements(driver, ProductPage.class);
             navigationUtil = PageFactory.initElements(driver, NavigationUtil.class);
@@ -110,5 +115,3 @@ public class DriverFactory {
         return driver;
     }
 }
-
-
