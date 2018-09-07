@@ -1,15 +1,13 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/main/java/featureFiles/products.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/main/java/featureFiles/contactus.feature");
 formatter.feature({
   "line": 1,
-  "name": "Products page",
+  "name": "Submit data to webdriveruniversity using contact us form",
   "description": "",
-  "id": "products-page",
+  "id": "submit-data-to-webdriveruniversity-using-contact-us-form",
   "keyword": "Feature"
 });
-formatter.scenarioOutline({
-  "line": 3,
-  "name": "validate promo code alert is visiblformatter.before({
-  "duration": 48693007350,
+formatter.before({
+  "duration": 8535954253,
   "status": "passed"
 });
 formatter.scenario({
@@ -71,77 +69,77 @@ formatter.step({
 });
 formatter.step({
   "line": 12,
-  "name": "the information should successfully be submitted via the contact us form",
-  "keyword": "Then "
+  "name": "the information should successfully be submitted viformatter.before({
+  "duration": 8639490492,
+  "status": "passed"
 });
-formatter.match({
-  "location": "ContactUsSteps.i_access_webdriveruniversity_contact_us_form()"
-});
-formatter.result({
-  "duration": 4914434848,
+formatter.scenario({
+  "line": 10,
+  "name": "validate promo code alert is visiformatter.result({
+  "duration": 1645762875,
   "status": "passed"
 });
 formatter.match({
   "location": "ContactUsSteps.i_enter_a_valid_firstname()"
 });
 formatter.result({
-  "duration": 3514345060,
+  "duration": 1475189310,
   "status": "passed"
 });
 formatter.match({
   "location": "ContactUsSteps.i_enter_a_valid_last_name(DataTable)"
 });
 formatter.result({
-  "duration": 3238198893,
+  "duration": 902841489,
   "status": "passed"
 });
 formatter.match({
   "location": "ContactUsSteps.i_enter_a_valid_email_address()"
 });
 formatter.result({
-  "duration": 4664481479,
+  "duration": 1605260465,
   "status": "passed"
 });
 formatter.match({
   "location": "ContactUsSteps.i_enter_comments(DataTable)"
 });
 formatter.result({
-  "duration": 2795866470,
+  "duration": 878917171,
   "status": "passed"
 });
 formatter.match({
   "location": "ContactUsSteps.i_click_on_the_submit_button()"
 });
 formatter.result({
-  "duration": 2810698608,
+  "duration": 2347529013,
   "status": "passed"
 });
 formatter.match({
   "location": "ContactUsSteps.the_information_should_successfully_be_submitted_via_the_contact_us_form()"
 });
 formatter.result({
-  "duration": 915648771,
+  "duration": 801053830,
   "status": "passed"
 });
 formatter.after({
-  "duration": 315905451,
+  "duration": 2316916595,
   "status": "passed"
 });
-});roductSteps.user_clicks_on(String)"
+});ProductSteps.user_clicks_on(String)"
 });
 formatter.result({
-  "duration": 1995977251,
+  "duration": 500407600,
   "status": "passed"
 });
 formatter.match({
   "location": "ProductSteps.user_should_be_presented_with_a_promo_alert()"
 });
 formatter.result({
-  "duration": 5776393482,
+  "duration": 2272932128,
   "status": "passed"
 });
 formatter.after({
-  "duration": 584484892,
+  "duration": 2606342614,
   "status": "passed"
 });
 });

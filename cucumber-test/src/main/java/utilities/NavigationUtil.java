@@ -1,8 +1,6 @@
 package utilities;
 
-import com.cucumber.listener.Reporter;
 import cucumber.api.Scenario;
-import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -10,16 +8,14 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.List;
 
 public class NavigationUtil extends DriverFactory {
 
-    protected static WebDriverWait wait;
-    protected JavascriptExecutor jsExecutor;
+    private static WebDriverWait wait;
+    private JavascriptExecutor jsExecutor;
 
-//    public static void captureScreenshot(WebDriver driver, Scenario scenario) {
+    //    public static void captureScreenshot(WebDriver driver, Scenario scenario) {
 //        if (scenario.isFailed()) {
 //            String screenshotName = scenario.getName().replaceAll(" ", "_");
 //            try {
@@ -48,7 +44,6 @@ public class NavigationUtil extends DriverFactory {
             }
         }
     }
-
 
 
     public NavigationUtil() {

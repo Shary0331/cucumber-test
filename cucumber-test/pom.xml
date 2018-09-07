@@ -45,7 +45,9 @@
                             <!--<suiteXmlFile>testng.xml</suiteXmlFile>-->
                         <!--</suiteXmlFiles>-->
                         <parallel>classes</parallel>
-                        <forkMode>perthread</forkMode>
+                        <!--<forkMode>perthread</forkMode>-->
+                        <forkCount>3</forkCount>
+                        <reuseForks>true</reuseForks>
                         <threadCount>3</threadCount>
                         <testFailureIgnore>false</testFailureIgnore>
                         <includes>
