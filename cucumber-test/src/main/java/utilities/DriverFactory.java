@@ -1,5 +1,6 @@
 package utilities;
 
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -75,8 +76,9 @@ public class DriverFactory {
                         options.addArguments("start-maximized");
                         options.addArguments("--disable-notifications");
                         options.addArguments("disable-infobars");
+                        Capabilities capabilities = DesiredCapabilities.chrome();
                         if (profile.equals("remote")) {
-                            driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
+                            driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), capabilities);
                         } else {
                             driver = new ChromeDriver(options);
                         }
