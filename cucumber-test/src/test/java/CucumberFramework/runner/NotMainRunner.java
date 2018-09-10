@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         features = {"src/main/java/featureFiles/contactus.feature"},
         glue = {"CucumberFramework.stepFiles"},
         plugin = {"pretty", "html:target/cucumber",
-                "json:target/cucumber.json",
+                "json:target/cucumberContactus.json",
                 "com.cucumber.listener.ExtentCucumberFormatter:target/report.html"}
 //        tags = {"@Login"}
 )
