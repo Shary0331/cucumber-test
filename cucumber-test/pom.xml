@@ -42,13 +42,12 @@
                             <profileId>${project.activeProfiles[0].id}</profileId>
                         </systemPropertyVariables>
                         <!--<suiteXmlFiles>-->
-                            <!--<suiteXmlFile>testng.xml</suiteXmlFile>-->
+                        <!--<suiteXmlFile>testng.xml</suiteXmlFile>-->
                         <!--</suiteXmlFiles>-->
-                        <parallel>classes</parallel>
-                        <!--<forkMode>perthread</forkMode>-->
-                        <forkCount>3</forkCount>
+                        <forkCount>4</forkCount>
                         <reuseForks>true</reuseForks>
-                        <threadCount>3</threadCount>
+                        <!--<parallel>classes</parallel>-->
+                        <!--<threadCount>3</threadCount>-->
                         <testFailureIgnore>false</testFailureIgnore>
                         <includes>
                             <include>**/*Runner.java</include>
@@ -65,6 +64,26 @@
                         <fork>true</fork>
                     </configuration>
                 </plugin>
+                <plugin>
+                    <groupId>com.trivago.rta</groupId>
+                    <artifactId>cluecumber-report-plugin</artifactId>
+                    <version>1.2.1</version>
+                    <executions>
+                        <execution>
+                            <id>report</id>
+                            <phase>post-integration-test</phase>
+                            <goals>
+                                <goal>reporting</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <configuration>
+                        <sourceJsonReportDirectory>${project.build.directory}/cucumber-report
+                        </sourceJsonReportDirectory>
+                        <generatedHtmlReportDirectory>${project.build.directory}/generated-report
+                        </generatedHtmlReportDirectory>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
         <resources>
@@ -73,6 +92,7 @@
             </resource>
         </resources>
     </build>
+
 
     <reporting>
         <plugins>
